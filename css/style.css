@@ -1,0 +1,114 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+
+  }
+  
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+/* Header */
+.headerInicio{
+    background-image: url("../img/fundoInicio.png");
+    background-size: cover;
+    min-height: 692px;
+}
+
+/* Nav do Inicio */
+.navInicio{
+    height: 4rem;
+}
+
+.ulInicio{
+    list-style-type: none;
+}
+
+.ulInicio li{
+    display: inline;
+    color: #fff;
+    float: right;
+}
+.ulInicio li.logo{
+    float: left;
+    margin-left: 100px;
+}
+
+.ulInicio li.logo img{
+    max-width: 35px;
+    min-height: 35px;
+    margin-top: -5px;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.ulInicio li a{
+    color: #fff;
+    text-decoration: none;
+    padding: 30px 20px; 
+    display: inline-block;
+    transition: 1.5s;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.ulInicio li.ultimoLi{
+    margin-right: 30px;
+}
+
+.ulInicio li a:hover{
+    transform: scale(1.05);
+}
+
+/* Link da Nav */
+.ulInicio li a:link{
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Section */
+
+.sectionInicio {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 130px;
+}
+.Inicio{
+    max-width: 40%;
+    margin-right: 200px;
+    margin-left: 100px;
+}
+
+.sectionInicio h1{
+    color: #fff;
+    font-size: 64px;
+    font-family: "Be Vietnam Pro";
+    font-weight: 700;
+    margin-top: 0;
+}
+
+.sectionInicio img{
+    border-radius: 25px;
+}
+
+.sectionInicio #btn{
+        background: linear-gradient(135deg, #ff8400, #ffd621);
+        border: none;
+        color: #000;
+        padding: 15px 25px;
+        border-radius: 25px;
+        font-size: 20px;
+        cursor: pointer;
+        outline: none;
+        transition: 1.0s;
+}
+
+.sectionInicio #btn:hover{
+    transform: scale(1.05);
+}
