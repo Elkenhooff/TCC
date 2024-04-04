@@ -1,38 +1,52 @@
 <?php
 session_start();
-include("cadastro.php");
+include("cadastro.php"); include("loginCliFunc.php");
 $objetoCadastra = new Cadastro();
-//$objetoLogin = new Login();
+$objetoLogin = new Login();
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
+    $resultado = "";
     if ($_POST['tipo'] == "cadastro"){
-        $objetoCadastra -> cadastroCliente();
-        $resultado =  $objetoCadastra -> getResultado();
-        $_SESSION['resultado'] = $resultado;
-        if ($_SESSION['resultado'] != ""){
-        echo ("<script>document.addEventListener('DOMContentLoaded', function(){
-            document.querySelector('.Cadastro').style.display = 'flex';
-            document.querySelector('.Login').style.display = 'none';
-            login = false;
-        })</script>;");
+
+        $escolha = $_POST['selectCadastro'];
+        if ($escolha == "escolha"){
+            echo ("<script>
+            document.addEventListener('DOMContentLoaded', function() {
+                document.getElementById('tituloResultado').style.display = 'block';
+                document.getElementById('tituloResultado').innerHTML = 'Por favor escolha uma função';
+                document.querySelector('.Cadastro').style.display = 'flex';
+                document.querySelector('.Login').style.display = 'none';
+                login = false;
+            });
+            </script>;");
+        }else{
+            $objetoCadastra -> Cadastrar();
+            $resultado = $objetoCadastra -> getResultado(); 
         }
+
         switch ($resultado){
-            case 0:
+            case 0: 
                 echo ("<script>
                 document.addEventListener('DOMContentLoaded', function() {
+                    document.querySelector('.Cadastro').style.display = 'flex';
+                document.querySelector('.Login').style.display = 'none';
                     document.getElementById('tituloResultado').style.display = 'block';
                     document.getElementById('tituloResultado').innerHTML = 'Usuário já cadastrado';
+                    login = false;
                 });
                 </script>;");
                 break;
             case 1:
                 echo ("<script>
                 document.addEventListener('DOMContentLoaded', function() {
+                    document.querySelector('.Cadastro').style.display = 'flex';
+                    document.querySelector('.Login').style.display = 'none';
                     document.getElementById('tituloResultado').style.display = 'block';
                     document.getElementById('tituloResultado').innerHTML = 'Por favor preencha todos os campos';
+                    login = false;
                 });
                 </script>;");
             default:
-                break;  
+                break;
         }
         // if ($objetoCadastra ->  getResultado() == 0){
            
@@ -44,7 +58,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         //     //echo("<script>document.getElementById('tituloResultado').innerHTML = 'abc';</script>");
         // }
     } elseif ($_POST['tipo'] == "login"){
+        $escolha = $_POST['selectLogin'];
 
+        switch ($escolha){
+            case "cliente":
+                break;
+            case "funcionario":
+                break;
+            default:
+                break;
+        }
     }
     
 }
@@ -57,7 +80,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChefConnect</title>
     <link rel="stylesheet" href="./css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- eu tenteiii
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     -->
 
     
 </head>
@@ -65,6 +90,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     <div class="Login">
         <form action="login.php" method="post" id="formLogin">
             <input type="hidden" name="tipo" value="login">
+            <select name="selectLogin">
+                <option value="escolha">Escolha sua função</option>
+                <option value="cliente">Cliente</option>
+                <option value="funcionario">Chefe</option>
+            </select><br>
             <label for="email">Email</label><br>
             <input type="email" name="email"><br>
             <!-- <label for="nome">Nome</label><br>
@@ -80,7 +110,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         <form action="login.php" method="post" id="formCadastro">
             <h2 id="tituloResultado" style="display: none;"></h2>
             <label for="escolha">Função</label><br>
-            <select>
+            <select name="selectCadastro">
                 <option value="escolha">Escolha sua função</option>
                 <option value="cliente">Cliente</option>
                 <option value="funcionario">Chefe</option>

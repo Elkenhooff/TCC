@@ -80,9 +80,17 @@ ul {
     margin-top: 130px;
 }
 .Inicio{
-    max-width: 40%;
+    width: 50%;
     margin-right: 200px;
     margin-left: 100px;
+}
+
+.Inicio2{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .sectionInicio h1{
