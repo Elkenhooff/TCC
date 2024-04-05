@@ -7,9 +7,7 @@ Class Cadastro{
     {
         include("conectadb.php");
         $this->link = $link;
-    }
-
-    
+    } 
 
     public function Cadastrar(){
         if ($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -21,9 +19,7 @@ Class Cadastro{
             if ($escolha == "cliente"){
                 $sql = "SELECT COUNT(cli_id) FROM clientes WHERE cli_email = ?";
             } elseif ($escolha == "funcionario"){
-                // $sql = ; Sql do funcionário (to sem banco de dados socorro)
-            }else{
-                // colocar algo para impedir o econtinuo do código
+                $sql = "SELECT COUNT(func_id) FROM funcionarios WHERE func_email = ?";
             }
             $statement = mysqli_prepare($this->link,$sql);
             mysqli_stmt_bind_param($statement, "s", $email);
@@ -48,7 +44,7 @@ Class Cadastro{
                         if ($escolha == "cliente"){
                             $sql = "INSERT INTO clientes(cli_nome, cli_email, cli_senha, cli_seguranca, cli_ativo) VALUES (?, ?, ?, ?,'s');";
                         } elseif($escolha == "funcionario"){
-                            // $sql = ; insert do funcionario 
+                            $sql = "INSERT INTO funcionarios(func_nome, func_email, func_senha, func_seguranca, func_ativo) VALUES (?, ?, ?, ?, 's');";
                         }
                         $statement = mysqli_prepare($this->link,$sql);
                         mysqli_stmt_bind_param($statement, "ssss", $nome, $email, $senha, $seguranca);

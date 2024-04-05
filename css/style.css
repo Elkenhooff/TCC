@@ -15,7 +15,7 @@ ul {
 .headerInicio{
     background-image: url("../img/fundoInicio.png");
     background-size: cover;
-    min-height: 692px;
+    min-height: 900px;
 }
 
 /* Nav do Inicio */
@@ -77,7 +77,7 @@ ul {
     display: flex;
     align-items: center;
     width: 100%;
-    margin-top: 130px;
+    margin-top: 160px;
 }
 .Inicio{
     width: 50%;
