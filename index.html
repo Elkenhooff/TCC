@@ -16,18 +16,78 @@
                 <li class="logo"><img src="./img/logo.png"><a href="#">ChefConnect</a></li>
                 <li class="ultimoLi"><a href="login.php">Login</a></li>
                 <li><a href="#">Contate-nos</a></li>
+                <li><a href="#">Sobre-nos</a></li>
             </ul>
         </nav>
-        <section class="sectionInicio">
+        <section class="sectionInicio" id="animate">
             <div class="Inicio">
                 <h1>Contrate seu chefe</h1>
-                <a href="login.html"><button id="btn">Contratar</button></a>
+                <a href="login.php"><button id="btn">Contratar</button></a>
             </div>
             <div class="Inicio2">
                 <img src="./img/fundoInicio2.png">
             </div>
         </section>
     </header>
+    <main>
+        <section class="sectionInicio2">
+            <div class="Inicio2">  
+            </div>
+<div class="fundoallblack">
+    
+    <div>
+        <img id="smile" src="img/sorrindo.webp" alt="" height="900px">
+        <img src="img/morango.jpg" class="img-fluid" alt="...">
+    </div>
+
+<div>
+    <h1 class="chef">ChefConnect</h1>
+
+    <h4 class="connect" >CHEFCONNECT</h4>
+</div>
+<div>
+    <p id="text" >
+        Bem-vindo ao nosso site especializado em seleção de chefes!<br> 
+        Aqui, você encontrará uma ampla variedade de perfis de chefs talentosos,<br> 
+        cada um com sua própria formação, especializações e experiência.<br> Navegue pelas <br>
+        informações detalhadas de cada candidato, incluindo sua
+        trajetória profissional, habilidades culinárias e avaliações de clientes anteriores.<br>
+        Com a nossa plataforma intuitiva, você pode comparar facilmente os chefs disponíveis e<br>
+        tomar uma decisão informada sobre quem contratar para atender às suas necessidades<br> gastronômicas.
+        Encontre o chef perfeito para sua ocasião especial ou projeto culinário aqui!
+    </p>
+</div>
+</div>
+    <div>
+        <img class="fundopreto1" src="img/fundo preto.jpg" alt="">
+    </div>
+    <div>
+        <p class="text2">
+            Bem-vindo ao nosso site, onde a diversidade culinária é o ingrediente principal! Aqui,<br>
+            reunimos uma equipe de cozinheiros talentosos, cada um trazendo consigo um estilo único,<br>
+            uma história cativante e um toque distintivo que torna a experiência gastronômica verdadeiramente<br>
+            memorável. Nossos cozinheiros são verdadeiros mestres em sua arte, representando uma ampla gama de<br>
+            especialidades e tradições culinárias. Desde o mestre das especiarias, cujos pratos exalam perfumes<br>
+            exóticos que nos transportam para terras distantes, até o artista dos doces, que transforma açúcar e <br>
+            farinha em sobremesas que desafiam a definição de indulgência, cada um de nossos cozinheiros traz sua própria magia para a mesa.
+            Além disso, celebramos a diversidade em todas as suas formas. Nossa equipe inclui especialistas em culinária internacional,<br>
+            chefs especializados em dietas específicas (como veganos, vegetarianos, sem glúten, entre outros), bem como profissionais dedicados<br>
+            a reinterpretar clássicos culinários com um toque contemporâneo e inovador.
+        </p>
+
+    </div>
+
+
+
+        </section>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var items = document.querySelectorAll('#animate');
+            items.forEach(function(item){
+                item.classList.toggle("show");
+            })
+        });</script>
 </body>
 
 

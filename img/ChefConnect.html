@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)http://localhost/TCC/login.php -->
+<html lang="pt-br"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChefConnect</title>
+    <link rel="stylesheet" href="./ChefConnect_files/stylelogin.css">
+    <link rel="stylesheet" href="./ChefConnect_files/bootstrap.css">
+    <!-- eu tenteiii
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     -->
+
+    
+</head>
+<body><nav class="navInicio">
+        <ul class="ulInicio">
+            <li class="logo"><img src="./ChefConnect_files/logo.png"><a href="http://localhost/TCC/index.html">ChefConnect</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="Login">
+        <form action="http://localhost/TCC/login.php" method="post" id="formLogin">
+        <div class="container">
+        <h2 id="tituloResultadoLogin" style="display: block;">Por favor preencha todos os campos</h2>
+            <input type="hidden" name="tipo" value="login">
+            <label for="escolha">Função</label><br>
+            <select name="selectLogin">
+                <option value="escolha">Escolha sua função</option>
+                <option value="cliente">Cliente</option>
+                <option value="funcionario">Chefe</option>
+            </select><br>
+            <!--  cadeado podre pae?  <img id="cadeado" src="imagens/cadeado.png" alt=""> -->
+            <label for="email">Email</label><br>
+            <input type="email" id="text" class="form-control" name="email" placeholder="Digite seu email"><br>
+            <!-- <label for="nome">Nome</label><br>
+            <input type="text" name="nome"><br> -->
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" class="form-control" name="senha" placeholder="Digite sua senha"><br>
+            <img id="fecharolho" src="./ChefConnect_files/fechar-o-olho.png" alt=""><br>
+            <a href="http://localhost/TCC/recuperarsenha.html">Recuperar senha</a><br>
+            <p id="trocarCadastro">Não possui conta? Clique aqui.</p>
+            <button type="submit" id="btn">Entrar</button>
+        </div>
+        </form>
+    </div>
+    <div class="Cadastro">
+        <form action="http://localhost/TCC/login.php" method="post" id="formCadastro">
+        <div class="container">
+            <h2 id="tituloResultado" style="display: none;"></h2>
+            <label for="escolha">Função</label><br>
+            <select name="selectCadastro">
+                <option value="escolha">Escolha sua função</option>
+                <option value="cliente">Cliente</option>
+                <option value="funcionario">Chefe</option>
+            </select><br>
+            <input type="hidden" name="tipo" value="cadastro">
+            <label for="email">Email</label><br>
+            <input type="email" id="text" name="email" placeholder="Digite seu email"><br>
+            <label for="nome">Nome Completo</label><br>
+            <input type="text" id="text" name="nome" placeholder="Digite seu nome completo"><br>
+            <label for="senha">Senha</label>
+            <input type="password" id="senha2" name="senha" placeholder="Digite sua senha"><br>
+            <img id="fecharolho2" src="./ChefConnect_files/fechar-o-olho.png" alt="">
+            <p id="trocarLogin">Já possui conta? Clique aqui.</p>
+            <button type="submit" id="btn">Cadastrar</button>
+        </div>
+        </form>
+    </div>
+    <script src="./ChefConnect_files/script.js.baixados"></script>
+    <script src="./ChefConnect_files/bootstrap.js.baixados"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            let resultadoLogin = "Por favor preencha todos os campos";
+            let resultadoCadastro ="";
+
+            if (resultadoLogin !== '') {
+                document.getElementById('tituloResultadoLogin').style.display = 'block';
+                document.getElementById('tituloResultadoLogin').innerHTML = resultadoLogin;
+            }
+
+            if (resultadoCadastro !== '') {
+                document.getElementById('tituloResultado').style.display = 'block';
+                document.getElementById('tituloResultado').innerHTML = resultadoCadastro;
+            }
+        });
+
+    </script>
+
+</body></html>
